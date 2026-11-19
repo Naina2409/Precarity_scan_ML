@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # PrecarityScan (v2): measuring precarious gig work with data science
 
 A full data-science project for gig workers (delivery, ride-hailing, home services): data collection template, cleaning
@@ -49,3 +50,6 @@ Precarity-index risk bands are sensitive to weights (see sensitivity analysis), 
 ## Notes
 - Python 3.10+. `requirements.txt` uses minimum versions; pin exact versions (`pip freeze`) before submitting.
 - The Streamlit app, FastAPI service and Docker files were written against the libraries' documented APIs; the data, statistics, ML, scoring, auth and monitoring code is covered by the unit tests.
+=======
+# Precarity_scan_ML
+>>>>>>> cc55188af61883de526a51bad9d361486dd31d6e

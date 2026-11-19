@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # PrecarityScan (v2): measuring precarious gig work with data science
 
 A full data-science project for gig workers (delivery, ride-hailing, home services): data collection template, cleaning

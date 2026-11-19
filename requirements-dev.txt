@@ -1,0 +1,5 @@
+-r requirements.txt
+pytest>=8.0
+httpx>=0.27
+# optional extras: SHAP explanations (used automatically if installed)
+shap>=0.45

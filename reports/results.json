@@ -1,0 +1,600 @@
+{
+  "cleaning_audit_on_messy_file": {
+    "rows_in": 608,
+    "column_mapping": {
+      "Worker ID": "worker_id",
+      "age": "age",
+      "gender": "gender",
+      "city": "city",
+      "platform": "platform",
+      "months_experience": "months_experience",
+      "Hours/Day": "hours_per_day",
+      "Days per week": "days_per_week",
+      "dependents": "dependents",
+      "Monthly Income": "monthly_income",
+      "income_m1": "income_m1",
+      "income_m2": "income_m2",
+      "income_m3": "income_m3",
+      "income_m4": "income_m4",
+      "income_m5": "income_m5",
+      "income_m6": "income_m6",
+      "Health Insurance": "has_health_insurance",
+      "has_paid_leave": "has_paid_leave",
+      "has_retirement": "has_retirement",
+      "multiple_platforms": "multiple_platforms",
+      "has_work_loan": "has_work_loan",
+      "savings_months": "savings_months",
+      "financial_stress": "financial_stress"
+    },
+    "unmapped_columns": [],
+    "duplicates_removed": 8,
+    "out_of_range_set_to_missing": {
+      "age": 3,
+      "days_per_week": 6
+    },
+    "missing_before_imputation": {
+      "age": 27,
+      "days_per_week": 6,
+      "dependents": 25,
+      "savings_months": 17
+    },
+    "imputed": {
+      "age": "median (27)",
+      "days_per_week": "median (6)",
+      "dependents": "median (25)",
+      "savings_months": "median (17)"
+    },
+    "target_missing": 0,
+    "rows_out": 600
+  },
+  "descriptive": [
+    {
+      "index": "age",
+      "count": 600.0,
+      "mean": 27.617,
+      "std": 4.885,
+      "min": 18.0,
+      "25%": 24.0,
+      "50%": 28.0,
+      "75%": 31.0,
+      "max": 42.0,
+      "skew": 0.069,
+      "kurtosis": -0.302
+    },
+    {
+      "index": "monthly_income",
+      "count": 600.0,
+      "mean": 17859.585,
+      "std": 7789.072,
+      "min": 4153.0,
+      "25%": 12199.5,
+      "50%": 16552.5,
+      "75%": 21903.75,
+      "max": 56957.0,
+      "skew": 1.201,
+      "kurtosis": 2.445
+    },
+    {
+      "index": "income_per_hour",
+      "count": 600.0,
+      "mean": 73.3,
+      "std": 25.572,
+      "min": 23.841,
+      "25%": 54.206,
+      "50%": 69.158,
+      "75%": 88.032,
+      "max": 171.172,
+      "skew": 0.728,
+      "kurtosis": 0.515
+    },
+    {
+      "index": "income_cv",
+      "count": 600.0,
+      "mean": 0.167,
+      "std": 0.084,
+      "min": 0.031,
+      "25%": 0.105,
+      "50%": 0.148,
+      "75%": 0.215,
+      "max": 0.517,
+      "skew": 1.116,
+      "kurtosis": 1.373
+    },
+    {
+      "index": "weekly_hours",
+      "count": 600.0,
+      "mean": 56.127,
+      "std": 13.594,
+      "min": 20.0,
+      "25%": 45.0,
+      "50%": 56.0,
+      "75%": 66.0,
+      "max": 98.0,
+      "skew": 0.191,
+      "kurtosis": -0.212
+    },
+    {
+      "index": "dependents",
+      "count": 600.0,
+      "mean": 1.343,
+      "std": 1.121,
+      "min": 0.0,
+      "25%": 1.0,
+      "50%": 1.0,
+      "75%": 2.0,
+      "max": 5.0,
+      "skew": 0.791,
+      "kurtosis": 0.406
+    },
+    {
+      "index": "savings_months",
+      "count": 600.0,
+      "mean": 0.61,
+      "std": 0.726,
+      "min": 0.0,
+      "25%": 0.2,
+      "50%": 0.4,
+      "75%": 0.8,
+      "max": 6.4,
+      "skew": 3.073,
+      "kurtosis": 14.368
+    },
+    {
+      "index": "benefits_count",
+      "count": 600.0,
+      "mean": 0.287,
+      "std": 0.502,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%": 0.0,
+      "75%": 1.0,
+      "max": 3.0,
+      "skew": 1.57,
+      "kurtosis": 2.048
+    }
+  ],
+  "bootstrap_mean_income_ci": {
+    "estimate": 17859.585,
+    "ci_low": 17246.77625,
+    "ci_high": 18484.57420833333,
+    "n": 600
+  },
+  "normality_income": {
+    "shapiro_W": 0.9315556868195441,
+    "p_value": 6.220176209445893e-16,
+    "normal_at_5pct": false
+  },
+  "hypothesis_tests": {
+    "multi_platform_income": {
+      "test": "Welch t-test",
+      "value": "monthly_income",
+      "group": "multiple_platforms",
+      "mean_group1": 19438.292553191488,
+      "mean_group0": 17139.203883495145,
+      "t": 3.208900159717197,
+      "p_value": 0.0014672854357319924,
+      "mannwhitney_p": 0.00151529299545472,
+      "cohens_d": 0.2977304531428847,
+      "n1": 188,
+      "n0": 412
+    },
+    "platform_income_anova": {
+      "test": "One-way ANOVA",
+      "value": "monthly_income",
+      "group": "platform",
+      "F": 22.909824339825903,
+      "p_value": 2.3105050790471986e-24,
+      "kruskal_p": 3.10549242792521e-21,
+      "eta_squared": 0.18818161757666355,
+      "k_groups": 7
+    },
+    "benefits_vs_platform_chi2": {
+      "test": "Chi-square independence",
+      "a": "any_benefit",
+      "b": "platform",
+      "chi2": 9.082113316996692,
+      "dof": 6,
+      "p_value": 0.1690124696027111,
+      "cramers_v": 0.12303192889785895
+    },
+    "stress_vs_platform_chi2": {
+      "test": "Chi-square independence",
+      "a": "financial_stress",
+      "b": "platform",
+      "chi2": 4.672558989989582,
+      "dof": 6,
+      "p_value": 0.5864415772555025,
+      "cramers_v": 0.08824737002681328
+    },
+    "error_rates": {
+      "n_per_group": 60,
+      "alpha": 0.05,
+      "effect_size_d": 0.5,
+      "type_I_error_rate": 0.052,
+      "power": 0.7775,
+      "type_II_error_rate": 0.22250000000000003
+    },
+    "pairwise_significant_pairs_bonferroni": 12
+  },
+  "index": {
+    "mean": 52.109099803753,
+    "bands": {
+      "Medium": 342,
+      "Low": 138,
+      "High": 120
+    },
+    "sensitivity": {
+      "n_draws": 500,
+      "mean_spearman": 0.905423110175306,
+      "min_spearman": 0.5618073939094275,
+      "mean_share_changing_risk_band": 0.32593,
+      "max_share_changing_risk_band": 0.72
+    },
+    "pca_weights": {
+      "weights": {
+        "income_inadequacy": 0.355,
+        "income_volatility": 0.092,
+        "benefits_gap": 0.123,
+        "platform_dependence": 0.07,
+        "hours_strain": 0.324,
+        "asset_risk": 0.036
+      },
+      "explained_variance_pc1": 0.25554900245646733
+    }
+  },
+  "segments": {
+    "k": 2,
+    "silhouette": 0.22502887742246278,
+    "ari_kmeans_vs_hier": 0.25955570502717384,
+    "pca_explained": [
+      0.31621513023959064,
+      0.15966210618606363,
+      0.14650207553047145,
+      0.1435946648691665,
+      0.12272333997343911
+    ],
+    "profile": [
+      {
+        "segment": 0,
+        "monthly_income": 26197.51,
+        "income_cv": 0.2,
+        "benefits_count": 0.41,
+        "weekly_hours": 63.64,
+        "dependents": 1.34,
+        "savings_months": 0.99,
+        "income_per_hour": 96.61,
+        "size": 201,
+        "stress_rate": 0.209
+      },
+      {
+        "segment": 1,
+        "monthly_income": 13659.28,
+        "income_cv": 0.15,
+        "benefits_count": 0.22,
+        "weekly_hours": 52.34,
+        "dependents": 1.35,
+        "savings_months": 0.42,
+        "income_per_hour": 61.56,
+        "size": 399,
+        "stress_rate": 0.373
+      }
+    ]
+  },
+  "timeseries": {
+    "trend_per_month": 24.756338363419285,
+    "trend_p": 0.7254993766371833,
+    "mae_ses": 431.7224385359654,
+    "mae_naive": 571.8457596860133
+  },
+  "ml": {
+    "n": 600,
+    "prevalence": 0.31833333333333336,
+    "best_model": "LogisticRegression",
+    "threshold": 0.31,
+    "cv_table": [
+      {
+        "model": "LogisticRegression",
+        "accuracy": 0.7333,
+        "accuracy_sd": 0.0193,
+        "precision": 0.64,
+        "precision_sd": 0.1027,
+        "recall": 0.4312,
+        "recall_sd": 0.0675,
+        "f1": 0.5049,
+        "f1_sd": 0.0348,
+        "roc_auc": 0.7088,
+        "roc_auc_sd": 0.0186,
+        "train_roc_auc": 0.7896
+      },
+      {
+        "model": "RandomForest",
+        "accuracy": 0.6979,
+        "accuracy_sd": 0.0367,
+        "precision": 0.5509,
+        "precision_sd": 0.1214,
+        "recall": 0.2675,
+        "recall_sd": 0.074,
+        "f1": 0.3589,
+        "f1_sd": 0.0895,
+        "roc_auc": 0.6912,
+        "roc_auc_sd": 0.0289,
+        "train_roc_auc": 1.0
+      },
+      {
+        "model": "GradientBoosting",
+        "accuracy": 0.7062,
+        "accuracy_sd": 0.0332,
+        "precision": 0.5752,
+        "precision_sd": 0.0882,
+        "recall": 0.3527,
+        "recall_sd": 0.0537,
+        "f1": 0.433,
+        "f1_sd": 0.051,
+        "roc_auc": 0.6774,
+        "roc_auc_sd": 0.0463,
+        "train_roc_auc": 0.9969
+      },
+      {
+        "model": "KNN",
+        "accuracy": 0.6812,
+        "accuracy_sd": 0.0125,
+        "precision": 0.5941,
+        "precision_sd": 0.2078,
+        "recall": 0.1112,
+        "recall_sd": 0.044,
+        "f1": 0.1767,
+        "f1_sd": 0.0617,
+        "roc_auc": 0.6614,
+        "roc_auc_sd": 0.0152,
+        "train_roc_auc": 0.7646
+      },
+      {
+        "model": "DecisionTree",
+        "accuracy": 0.6333,
+        "accuracy_sd": 0.0167,
+        "precision": 0.359,
+        "precision_sd": 0.0832,
+        "recall": 0.2688,
+        "recall_sd": 0.127,
+        "f1": 0.2981,
+        "f1_sd": 0.1265,
+        "roc_auc": 0.5953,
+        "roc_auc_sd": 0.0359,
+        "train_roc_auc": 0.8578
+      }
+    ],
+    "tuned": {
+      "LogisticRegression": {
+        "cv_roc_auc": 0.731178033436098,
+        "best_params": {
+          "clf__C": 0.01
+        }
+      },
+      "RandomForest": {
+        "cv_roc_auc": 0.7023994285284607,
+        "best_params": {
+          "clf__max_depth": 8,
+          "clf__min_samples_leaf": 5,
+          "clf__n_estimators": 200
+        }
+      },
+      "GradientBoosting": {
+        "cv_roc_auc": 0.6866882221720931,
+        "best_params": {
+          "clf__subsample": 0.7,
+          "clf__n_estimators": 100,
+          "clf__max_depth": 4,
+          "clf__learning_rate": 0.03
+        }
+      }
+    },
+    "holdout": {
+      "accuracy": 0.6166666666666667,
+      "precision": 0.4375,
+      "recall": 0.7368421052631579,
+      "f1": 0.5490196078431373,
+      "roc_auc": 0.7432605905006419,
+      "brier": 0.18735317003780227
+    },
+    "holdout_confusion_matrix": [
+      [
+        46,
+        36
+      ],
+      [
+        10,
+        28
+      ]
+    ],
+    "holdout_at_0.5": {
+      "accuracy": 0.7083333333333334,
+      "precision": 0.6666666666666666,
+      "recall": 0.15789473684210525,
+      "f1": 0.2553191489361702,
+      "roc_auc": 0.7432605905006419,
+      "brier": 0.18735317003780227
+    },
+    "importance_top": [
+      {
+        "feature": "dependents",
+        "importance": 0.0768,
+        "sd": 0.0353
+      },
+      {
+        "feature": "income_cv",
+        "importance": 0.0403,
+        "sd": 0.015
+      },
+      {
+        "feature": "monthly_income",
+        "importance": 0.0297,
+        "sd": 0.0178
+      },
+      {
+        "feature": "savings_months",
+        "importance": 0.0204,
+        "sd": 0.0148
+      },
+      {
+        "feature": "income_per_hour",
+        "importance": 0.0198,
+        "sd": 0.0265
+      },
+      {
+        "feature": "months_experience",
+        "importance": 0.0082,
+        "sd": 0.0052
+      },
+      {
+        "feature": "multiple_platforms",
+        "importance": 0.0048,
+        "sd": 0.0068
+      },
+      {
+        "feature": "weekly_hours",
+        "importance": 0.0011,
+        "sd": 0.0016
+      }
+    ],
+    "imbalance": [
+      {
+        "strategy": "No handling",
+        "accuracy": 0.6967,
+        "precision": 0.5549,
+        "recall": 0.2254,
+        "f1": 0.3142,
+        "roc_auc": 0.6872
+      },
+      {
+        "strategy": "class_weight=balanced",
+        "accuracy": 0.67,
+        "precision": 0.4731,
+        "recall": 0.419,
+        "f1": 0.4379,
+        "roc_auc": 0.697
+      },
+      {
+        "strategy": "SMOTE",
+        "accuracy": 0.68,
+        "precision": 0.4926,
+        "recall": 0.3248,
+        "f1": 0.3863,
+        "roc_auc": 0.6791
+      }
+    ],
+    "regression": [
+      {
+        "model": "LinearRegression",
+        "cv_r2": 0.5013,
+        "test_r2": 0.5444,
+        "test_rmse": 5614.8487,
+        "test_mae": 4133.173
+      },
+      {
+        "model": "RandomForestRegressor",
+        "cv_r2": 0.3552,
+        "test_r2": 0.4202,
+        "test_rmse": 6334.1043,
+        "test_mae": 4511.7084
+      }
+    ],
+    "fairness": {
+      "gender": [
+        {
+          "gender": "Female",
+          "n": 16,
+          "actual_rate": 0.375,
+          "predicted_rate": 0.75,
+          "tpr": 1.0,
+          "fpr": 0.6,
+          "small_group": true
+        },
+        {
+          "gender": "Male",
+          "n": 101,
+          "actual_rate": 0.3168,
+          "predicted_rate": 0.4851,
+          "tpr": 0.6875,
+          "fpr": 0.3913,
+          "small_group": false
+        },
+        {
+          "gender": "Other",
+          "n": 3,
+          "actual_rate": 0.0,
+          "predicted_rate": 1.0,
+          "tpr": NaN,
+          "fpr": 1.0,
+          "small_group": true
+        }
+      ],
+      "city": [
+        {
+          "city": "Bangalore",
+          "n": 19,
+          "actual_rate": 0.2632,
+          "predicted_rate": 0.4211,
+          "tpr": 0.6,
+          "fpr": 0.3571,
+          "small_group": true
+        },
+        {
+          "city": "Chennai",
+          "n": 9,
+          "actual_rate": 0.3333,
+          "predicted_rate": 1.0,
+          "tpr": 1.0,
+          "fpr": 1.0,
+          "small_group": true
+        },
+        {
+          "city": "Delhi",
+          "n": 19,
+          "actual_rate": 0.2632,
+          "predicted_rate": 0.4737,
+          "tpr": 0.8,
+          "fpr": 0.3571,
+          "small_group": true
+        },
+        {
+          "city": "Hyderabad",
+          "n": 24,
+          "actual_rate": 0.375,
+          "predicted_rate": 0.5417,
+          "tpr": 0.8889,
+          "fpr": 0.3333,
+          "small_group": true
+        },
+        {
+          "city": "Kolkata",
+          "n": 10,
+          "actual_rate": 0.4,
+          "predicted_rate": 0.7,
+          "tpr": 0.5,
+          "fpr": 0.8333,
+          "small_group": true
+        },
+        {
+          "city": "Mumbai",
+          "n": 18,
+          "actual_rate": 0.3333,
+          "predicted_rate": 0.4444,
+          "tpr": 0.8333,
+          "fpr": 0.25,
+          "small_group": true
+        },
+        {
+          "city": "Pune",
+          "n": 21,
+          "actual_rate": 0.2857,
+          "predicted_rate": 0.4762,
+          "tpr": 0.5,
+          "fpr": 0.4667,
+          "small_group": true
+        }
+      ]
+    },
+    "best_depth_by_cv": 3
+  },
+  "registered_model": "v20261119135558"
+}

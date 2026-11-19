@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.env
+data/users.csv
+data/worker_submissions.csv
+logs/*.csv
+models/*.joblib
+models/reference_*.csv
+.venv/
+.pytest_cache/

@@ -61,5 +61,26 @@
     },
     "sklearn_version": "1.9.1",
     "note": "run_analysis"
+  },
+  {
+    "version": "v20261124095654",
+    "file": "model_v20261124095654.joblib",
+    "created_utc": "2026-11-24T09:56:54.128642+00:00",
+    "data_hash": "68c8d6ca064d2008",
+    "n_rows": 600,
+    "metrics": {
+      "accuracy": 0.6167,
+      "precision": 0.4375,
+      "recall": 0.7368,
+      "f1": 0.549,
+      "roc_auc": 0.7433,
+      "brier": 0.1874
+    },
+    "params": {
+      "model": "LogisticRegression",
+      "threshold": 0.31
+    },
+    "sklearn_version": "1.9.1",
+    "note": "run_analysis"
   }
 ]

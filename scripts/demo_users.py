@@ -7,9 +7,15 @@ DEMO = [("admin", "Admin@12345", "admin"),
         ("researcher", "Research@12345", "researcher"),
         ("worker1", "Worker@12345", "worker")]
 
-for name, pw, role in DEMO:
-    try:
-        create_user(name, pw, role)
-        print(f"created  {role:10s} {name} / {pw}")
-    except ValueError as e:
-        print(f"skipped  {name}: {e}")
+
+def create_demo_users():
+    for name, pw, role in DEMO:
+        try:
+            create_user(name, pw, role)
+            print(f"created  {role:10s} {name} / {pw}")
+        except ValueError as e:
+            print(f"skipped  {name}: {e}")
+
+
+if __name__ == "__main__":
+    create_demo_users()
